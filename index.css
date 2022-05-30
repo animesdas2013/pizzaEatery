@@ -1,0 +1,84 @@
+*{
+    margin: auto;
+    padding: auto;
+    opacity: 1;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body{
+    background-image: url('https://freerangestock.com/sample/140597/pizza-on-dark-table-top-background--with-copyspace.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+.heading{
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: 4rem;
+    
+    
+}
+
+.pizzaBooking{
+    text-align: center;
+    color: rgba(229, 229, 229, 0.286);
+    font-size: larger;
+    font-weight: bolder;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.form{
+    text-decoration: none;
+    opacity: 0.5;
+    height: 25rem;
+    width: 30rem;
+}
+
+.form:hover{
+    background-color: transparent;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+input{
+   background-color: antiquewhite;
+   border-radius: 8px;
+   width: 15rem; 
+}
+
+.input{
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+
+.submit{
+    padding-top: 2rem;
+    display: inline-block;
+}
+
+button{
+    background-color: rgb(34, 173, 201);
+    color: antiquewhite;
+    border-radius: 10px;
+    width: 8rem;
+    height: 1.5rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+

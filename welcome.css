@@ -1,0 +1,50 @@
+*{
+    background-image: url('https://cdn.pixabay.com/photo/2020/03/21/02/26/pizza-4952508_1280.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    border: none;
+}
+
+.form{
+    margin-top: 2rem;
+}
+
+#id-payment{
+    border: 1px solid aquamarine;
+}
+
+#id-payment:hover{
+    border: 1px solid whitesmoke;
+    background-color: rgb(215, 191, 160);
+    color: rgb(27, 190, 196);
+}
+
+#id-coupons{
+    color: aquamarine;
+    border: 1px solid;
+}
+
+#id-coupons:hover{
+    color:aquamarine;
+    transition: 1s;
+}
+
+#btn{
+    border: 1px solid;
+    color: aquamarine;
+}
+
+#btn:hover{
+    transition: 1s;
+    color: wheat;
+}
+
+
+
+

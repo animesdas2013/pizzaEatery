@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+    <div class="wrapper">
+       <div class="form">
+
+           <form onsubmit="return validityCheck()" action="Delivered.html" name="form">
+                <div class="input">
+                    <label>Payment Method</label>
+                    <select id="id-payment">
+                        <option value=""></option>
+                        <option value="1">COD</option>
+                        <option value="2">Credit Card</option>
+                        <option value="3">PayTM</option>
+                        <option value="4">Debit Card</option>
+                    </select>
+                </div><br>
+    
+                <!-- pizza selection radio -->
+                <div class="input">        
+                    <fieldset id="pizzatype">
+                        <legend>Pizza</legend>
+                        <label> <input id="id-Pizza1" name="Pizza" type="radio" value="Simple Veg"> Simple Veg  </label>
+            
+                        <label> <input id="id-Pizza2" name="Pizza" type="radio" value="Veg Supreme"> Veg Supreme </label>
+                    
+                        <label> <input id="id-Pizza3" name="Pizza" type="radio"value="Veg Delight"> Veg Delight </label>
+                    </fieldset>
+                </div> <br><br>
+                
+                <!-- size of pizza radio -->
+                <div class="input">
+                    <fieldset>
+                        <legend>Pizza Size</legend>
+                        <label> <input id="id-Size1" name="pizzaSize" type="radio" value="Personal Pan "> Personal Pan </label>
+                        <label> <input id="id-Size2" name="pizzaSize" type="radio" value="Medium"> Medium </label>
+                        <label> <input id="id-Size3" name="pizzaSize" type="radio" value="Large"> Large </label>
+                    </fieldset>
+                </div><br><br>
+        
+                <!-- type of pizza radio -->
+                <div class="input">
+                    <fieldset>
+                        <legend>Crust</legend>
+                        <label> <input id="id-Crust1" name="Crust" type="radio" value="Thin"> Thin  </label>
+                        <label> <input id="id-Crust2" name="Crust" type="radio" value="Normal"> Normal </label>
+                        <label> <input id="id-Crust3" name="Crust" type="radio" value="Large">  Special </label>
+                    </fieldset>
+                </div><br><br>
+               
+                <!-- discountCoupons -->
+                <div class="input">
+                    <fieldset>
+                        <legend>COUPONS</legend>
+                        <label> <input id="id-coupons" type="text" size="15"> </label>
+                        
+                    </fieldset>
+                </div><br><br>
+            
+                <!-- terms -->
+                <div class="input">
+                    <fieldset>         
+                        <legend>Terms and Conditions</legend>
+                        <label> <input id = "check" name="Terms and Conditions" type="checkbox" value="Agree"> Agree </label>
+                    </fieldset>
+                </div><br><br>
+
+                <div class="submit"><button id="btn" type="submit"> Submit </button></div>
+            </form>
+       </div> 
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

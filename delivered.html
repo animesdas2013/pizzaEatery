@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivered</title>
+</head>
+    <style>
+        body{
+            background-image: url('https://media.istockphoto.com/photos/fresh-italian-pizza-picture-id1045841884?k=20&m=1045841884&s=612x612&w=0&h=NMPrk4Vd9j3FYICHwBIwCcOvxrY88Ne3mLLzAHpoZ9s=');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            font-size: larger;
+            font-weight: bolder;
+        }
+    </style>
+<body>
+    You can enjoy your Pizza Now!!
+
+    <div>
+        <p id="pizza"></p>
+        <p id="pizzaSize"></p>
+        <p id="crust"></p>
+    </div>
+
+</body>
+
+<script>
+    details = window.location.search.substr(1).split("&");
+    document.getElementById( 'pizza' ).innerHTML = "Pizza: "+details[0].split("=")[1].replace("_", " ");
+    document.getElementById( 'pizzaSize' ).innerHTML = "Pizza Size: "+details[1].split("=")[1];
+    document.getElementById( 'crust' ).innerHTML = "Crust: "+details[2].split("=")[1];
+</script>
+</html>
