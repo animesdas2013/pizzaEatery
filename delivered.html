@@ -12,40 +12,62 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            color: white;
+            color: rgba(255, 255, 255, 0.737);
             text-align: center;
             font-size: larger;
             font-weight: bolder;
+            margin: auto;
+            margin-left: 1rem;
+            width: 50%;
+            padding: 100px;
+
+        }
+
+        strong{
+            text-decoration: underline;
+            font-size: larger;
+        }
+
+        h2{
+            color: white;
         }
     </style>
 <body>
 
-    <strong><em>You can enjoy your Pizza Now!!</em></strong><br>
+    <h2>You can enjoy your Pizza Now!!</h2><br><br>
 
-    <strong><u>Customer details</u></strong></u>
-    <div class="details" id="details" style="color: rgb(208, 255, 0) ;">
+    <p><strong>Customer details</strong></p>
+
+    <!-- div to display from index page -->
+    <div class="details" id="details" style="color: rgb(222, 241, 136) ;">
          Your Details
     </div>
     <br>
 
     <p><strong>Pizza Details</strong></p>
-    <div id="choice" style="color: rgb(212, 154, 204)">
+
+    <!-- div to display from welcome page -->
+    <div id="choice" style="color: rgb(163, 215, 213)">
         Choices
     </div>
-
-
-    
 
 </body>
 
 <script>
+
+    //using this to get the items
     window.localStorage.getItem('user');
     var obj_user = JSON.parse(window.localStorage.getItem('user'))
+
+    //to display the data from index.html
     document.getElementById("details").innerHTML= (`Name: ${obj_user.user_name} <br/> Delivery address: ${obj_user.user_address} <br/> Phone Number:  ${obj_user.user_phnum} <br/> Email Id:  ${obj_user.user_emailId} <br/>` );
 
     window.localStorage.getItem('user1');
     var obj_user1 = JSON.parse(window.localStorage.getItem('user1'));
+
+    //to display the data from welcome.html
     document.getElementById("choice").innerHTML = (`Payment Method:  ${obj_user1.user1_payment} <br/> Type of Pizza:  ${obj_user1.user1_typeOfPizza} <br/> Size of Pizza:  ${obj_user1.user1_sizeOfPizza} <br/> Crust Type:  ${obj_user1.user1_crustType} `)
+
 </script>
 
 
