@@ -19,7 +19,7 @@ function formValidate(){
 
 
     let emailId = document.getElementById("id-email");
-    let permissibleEmail = /[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+    let permissibleEmail = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 
     //condition to validate name
     if(customerName.value.trim()=="" || !customerName.value.match(permissibleCharsInName)){
@@ -40,12 +40,22 @@ function formValidate(){
         return false;
     }
 
+    //condition to validate emailId
     if(emailId.value.trim()=="" || !emailId.value.match(permissibleEmail)){
         alert("Enter a valid email id");
         return false;
     }
 
-    return true;
+    //using local storage to display data on delivered.html
+    const user = {
+        user_name : customerName.value,
+        user_address : customerAddress.value,
+        user_phnum : mobileNumber.value,
+        user_emailId : emailId.value
+    }
+    window.localStorage.setItem('user', JSON.stringify(user));
+
+    return true
 
     
 }
@@ -53,15 +63,16 @@ function formValidate(){
 
 // for the page after initial validation
 function validityCheck(){
-
     //to get id of payment
-    let selectOption = document.getElementById("id-payment");
+    let selectOption = document.getElementById("id-payment").value;
 
     // to get type of pizza using name and for loop for iterating upto the number of radio options
     let typeOfPizza = document.form.Pizza;
     let valid = false;
+    let valid_value = "";
     for(let i=0; i<typeOfPizza.length; i++){
         if(typeOfPizza[i].checked){
+            valid_value = typeOfPizza[i].value
             valid=true;
             break;
         }
@@ -70,8 +81,10 @@ function validityCheck(){
     // to get size of pizza using name and for loop for iterating upto the number of radio options
     let sizeOfPizza = document.form.pizzaSize;
     let valid1 = false;
+    let valid_value1 = "";
     for(let j=0; j<sizeOfPizza.length; j++){
         if(sizeOfPizza[j].checked){
+            valid_value1 = sizeOfPizza[j].value
             valid1=true;
             break;
         }
@@ -80,8 +93,10 @@ function validityCheck(){
     // to get crust type of pizza using name and for loop for iterating upto the number of radio options
     let crustType = document.form.Crust;
     let valid2 = false;
+    let valid_value2 = "";
     for(let k=0; k<crustType.length; k++){
         if(crustType[k].checked){
+            valid_value2 = crustType[k].value
             valid2=true;
             break;
         }
@@ -122,8 +137,8 @@ function validityCheck(){
 
     // for validating the coupon code
     let coupon_input = coupons.value.trim()
-    if( !coupon_input.startsWith( coupon_code ) || !coupon_input.match(permissibleCodes) || coupon_input.length > 15 )
-    {
+    if( !coupon_input=="" && (!coupon_input.startsWith(coupon_code) || !coupon_input.match(permissibleCodes) || coupon_input.length > 15))
+    {   
         alert( "invalid coupon code, must start with PIZID and should have a max length of 15");
         return false;
     }
@@ -133,7 +148,16 @@ function validityCheck(){
         alert("You must agree to the terms first");
         return false;
     }
-    
+   
+    // using local storage to display data on delivered.html
+    const user1 = {
+        user1_payment : selectOption,
+        user1_typeOfPizza : valid_value,
+        user1_sizeOfPizza : valid_value1,
+        user1_crustType : valid_value2
+    }
+    window.localStorage.setItem('user1', JSON.stringify(user1));
+
     return true;
     
 }
