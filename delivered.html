@@ -19,20 +19,35 @@
         }
     </style>
 <body>
-    You can enjoy your Pizza Now!!
 
-    <div>
-        <p id="pizza"></p>
-        <p id="pizzaSize"></p>
-        <p id="crust"></p>
+    <strong><em>You can enjoy your Pizza Now!!</em></strong><br>
+
+    <strong><u>Customer details</u></strong></u>
+    <div class="details" id="details" style="color: rgb(208, 255, 0) ;">
+         Your Details
     </div>
+    <br>
+
+    <p><strong>Pizza Details</strong></p>
+    <div id="choice" style="color: rgb(212, 154, 204)">
+        Choices
+    </div>
+
+
+    
 
 </body>
 
 <script>
-    details = window.location.search.substr(1).split("&");
-    document.getElementById( 'pizza' ).innerHTML = "Pizza: "+details[0].split("=")[1].replace("_", " ");
-    document.getElementById( 'pizzaSize' ).innerHTML = "Pizza Size: "+details[1].split("=")[1];
-    document.getElementById( 'crust' ).innerHTML = "Crust: "+details[2].split("=")[1];
+    window.localStorage.getItem('user');
+    var obj_user = JSON.parse(window.localStorage.getItem('user'))
+    document.getElementById("details").innerHTML= (`Name: ${obj_user.user_name} <br/> Delivery address: ${obj_user.user_address} <br/> Phone Number:  ${obj_user.user_phnum} <br/> Email Id:  ${obj_user.user_emailId} <br/>` );
+
+    window.localStorage.getItem('user1');
+    var obj_user1 = JSON.parse(window.localStorage.getItem('user1'));
+    document.getElementById("choice").innerHTML = (`Payment Method:  ${obj_user1.user1_payment} <br/> Type of Pizza:  ${obj_user1.user1_typeOfPizza} <br/> Size of Pizza:  ${obj_user1.user1_sizeOfPizza} <br/> Crust Type:  ${obj_user1.user1_crustType} `)
 </script>
+
+
+
 </html>
